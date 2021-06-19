@@ -11,6 +11,7 @@ function fn() {
   if (env == 'dev') {
     // customize
     // e.g. config.foo = 'bar';
+    config.baseUrl = 'https://reqres.in/'
     config.baseEmail = 'user@dev.domain.com'
     config.basePassword = 'Test123456'
   } else if (env == 'uat') {

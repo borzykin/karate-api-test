@@ -1,7 +1,7 @@
 Feature: Requests from reqres.in
 
   Background: Define URL
-    * url 'https://reqres.in/'
+    * url baseUrl
 
   Scenario: TC123458. Get users from page 2
     Given path 'api/users/'
