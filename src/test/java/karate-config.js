@@ -8,13 +8,13 @@ function fn() {
     env: env,
     myVarName: 'someValue'
   }
-  if (env == 'dev') {
+  if (env === 'dev') {
     // customize
     // e.g. config.foo = 'bar';
     config.baseUrl = 'https://reqres.in/'
     config.baseEmail = 'user@dev.domain.com'
     config.basePassword = 'Test123456'
-  } else if (env == 'uat') {
+  } else if (env === 'uat') {
     config.baseEmail = 'user@uat.domain.com'
     config.basePassword = 'Qa123456'
   }
