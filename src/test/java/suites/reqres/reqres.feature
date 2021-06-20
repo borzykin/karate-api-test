@@ -3,7 +3,7 @@ Feature: Requests from reqres.in
   Background: Define URL
     * url baseUrl
 
-  Scenario: TC123458. Get users from page 2
+  Scenario: TC123406. Get users from page 2
     Given path 'api/users/'
     And param page = 2
     When method get
@@ -21,7 +21,7 @@ Feature: Requests from reqres.in
         }
     """
 
-  Scenario: TC123456. Get user by id
+  Scenario: TC123407. Get user by id
     Given path 'api/users/' + 7
     When method get
     Then status 200

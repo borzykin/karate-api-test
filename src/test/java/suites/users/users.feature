@@ -4,7 +4,7 @@ Feature: Sample karate test script
   Background:
     * url 'https://jsonplaceholder.typicode.com'
 
-  Scenario: TC123456. Get all users and then get the first user by id
+  Scenario: TC123401. Get all users and then get the first user by id
     Given path 'users'
     When method get
     Then status 200
@@ -15,7 +15,7 @@ Feature: Sample karate test script
     When method get
     Then status 200
 
-  Scenario: TC123457. Create a user and then get it by id
+  Scenario: TC123402. Create a user and then get it by id
     * def user =
       """
       {
