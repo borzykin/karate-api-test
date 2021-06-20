@@ -6,7 +6,9 @@ class ReqresRunner {
     
     @Karate.Test
     Karate testReqres() {
-        return Karate.run().relativeTo(getClass());
+        return Karate.run().relativeTo(getClass())
+                .tags("~@ignore")
+                .systemProperty("foo", "bar");
     }    
 
 }

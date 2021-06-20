@@ -7,7 +7,7 @@ class UsersRunner {
     @Karate.Test
     Karate testUsers() {
         // it is possible to pass feature name to run() class to run only this specific feature
-        return Karate.run().relativeTo(getClass());
+        return Karate.run().relativeTo(getClass()).tags("~@ignore");
     }    
 
 }

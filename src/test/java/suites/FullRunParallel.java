@@ -14,7 +14,7 @@ class FullRunParallel {
         Results results = Runner.path("classpath:suites")
                 .tags("~@ignore")
                 .outputCucumberJson(true)
-                .parallel(5);
+                .parallel(3);
         assertEquals(0, results.getFailCount(), results.getErrorMessages());
         printResults();
     }
