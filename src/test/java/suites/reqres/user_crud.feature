@@ -5,7 +5,7 @@ Feature: Reqres request to demonstrate calling other files and post test hooks
     * def uuid = function(){ return java.util.UUID.randomUUID() + '' }
     * def uuid = call uuid
     * def user = call read('/utils/create_user.feature')
-    * def userId = user.id
+    * def userId = user.userId
     * configure afterScenario =
     """
     function(userId) {

@@ -16,4 +16,4 @@ Feature: Create user
     And request user
     When method post
     Then status 201
-    * def user = response
+    * def userId = response.id
