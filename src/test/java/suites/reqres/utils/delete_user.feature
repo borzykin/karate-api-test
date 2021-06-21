@@ -1,5 +1,5 @@
 @ignore
-Feature: Create user
+Feature: Delete user util
 
   Background: Define URL
     * url baseUrl
