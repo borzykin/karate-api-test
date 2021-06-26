@@ -1,4 +1,4 @@
-package integrations;
+package integrations.testrail;
 
 import org.apache.commons.lang3.StringUtils;
 

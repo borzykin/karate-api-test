@@ -2,7 +2,8 @@ package suites;
 
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
-import integrations.TestResultsParser;
+import integrations.mocks.Mocks;
+import integrations.testrail.TestResultsParser;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,6 +12,10 @@ class FullRunParallel {
 
     @Test
     void testParallel() {
+        if (System.getProperty("isMocked", "false").equalsIgnoreCase("true")) {
+            Mocks.startMocks();
+        }
+
         Results results = Runner.path("classpath:suites")
                 .tags("~@ignore")
                 .outputCucumberJson(true)

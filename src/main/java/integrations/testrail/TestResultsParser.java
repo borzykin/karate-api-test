@@ -1,4 +1,4 @@
-package integrations;
+package integrations.testrail;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
