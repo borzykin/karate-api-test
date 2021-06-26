@@ -1,3 +1,4 @@
 /src/test/java/suites/travel/
 /.idea/
 /target/
+/src/test/java/suites/testelium/utils/auth.json
