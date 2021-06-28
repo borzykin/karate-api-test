@@ -16,7 +16,7 @@ class FullRunParallel {
 
     @BeforeAll
     void setUp() {
-        if (System.getProperty("isMocked", "false").equalsIgnoreCase("true")) {
+        if (System.getProperty("mocked", "false").equalsIgnoreCase("true")) {
             Mocks.startMocks();
         }
     }
@@ -33,13 +33,13 @@ class FullRunParallel {
     @AfterAll
     void tearDown() {
         printResults();
-        if (System.getProperty("isMocked", "false").equalsIgnoreCase("true")) {
+        if (System.getProperty("mocked", "false").equalsIgnoreCase("true")) {
             Mocks.stopMocks();
         }
     }
 
     void printResults() {
-        // demonstrates functionality of results parses that can be used for setting results via testrail API
+        // demonstrates functionality of results parser that can be used for setting results via testrail API
         System.out.println(TestResultsParser.getTestResultsMap());
     }
 
