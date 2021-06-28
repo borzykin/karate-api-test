@@ -15,11 +15,11 @@ public class User {
         this.address = address;
     }
 
-    public static String valid() {
+    public static String validAsJson() {
         return new Gson().toJson(new User("Test User", "testuser", "test@user.com", Address.valid()));
     }
 
-    public static String notValid() {
+    public static String notValidAsJson() {
         return new Gson().toJson(new User("1234", "1234", "123.com", Address.notValid()));
     }
 }

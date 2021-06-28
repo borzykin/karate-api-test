@@ -18,7 +18,7 @@ Feature: Sample karate test script
 
   Scenario: TC123402. Create a user and then get it by id
     Given url 'https://jsonplaceholder.typicode.com/users'
-    * def body = user.valid()
+    * def body = user.validAsJson()
     And request body
     When method post
     Then status 201
