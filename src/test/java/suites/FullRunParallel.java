@@ -4,24 +4,38 @@ import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
 import integrations.mocks.Mocks;
 import integrations.testrail.TestResultsParser;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class FullRunParallel {
 
-    @Test
-    void testParallel() {
+    @BeforeAll
+    void setUp() {
         if (System.getProperty("isMocked", "false").equalsIgnoreCase("true")) {
             Mocks.startMocks();
         }
+    }
 
+    @Test
+    void testParallel() {
         Results results = Runner.path("classpath:suites")
                 .tags("~@ignore")
-                .outputCucumberJson(true)
+                .outputCucumberJson(false)
                 .parallel(3);
         assertEquals(0, results.getFailCount(), results.getErrorMessages());
+    }
+
+    @AfterAll
+    void tearDown() {
         printResults();
+        if (System.getProperty("isMocked", "false").equalsIgnoreCase("true")) {
+            Mocks.stopMocks();
+        }
     }
 
     void printResults() {

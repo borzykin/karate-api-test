@@ -27,6 +27,15 @@ public class Mocks {
         }
     }
 
+    public static void stopMocks() {
+        if (MOCK_SERVER.isRunning()) {
+            MOCK_SERVER.stop();
+        }
+        if (!MOCK_SERVER_CLIENT.hasStopped()) {
+            MOCK_SERVER_CLIENT.stop();
+        }
+    }
+
     private static void mockSendResponse() throws IOException {
         HttpRequest request = HttpRequest.request("/api/send");
         String body = JsonParser.parseReader(newBufferedReader(Path.of("src/test/java/suites/testelium/utils/sendMockResponse.json")))

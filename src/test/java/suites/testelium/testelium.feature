@@ -3,7 +3,7 @@ Feature: Testelium SMS
   Background:
     * url "https://api.testelium.com"
 
-  Scenario: Test SMS delivery
+  Scenario: TC100001. Test SMS delivery
     # authorize, post call with body like {"email":"","password":""}
     Given path "/api/auth/login"
     * def authBody = read('/utils/auth.json')
