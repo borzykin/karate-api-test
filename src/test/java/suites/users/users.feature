@@ -3,6 +3,7 @@ Feature: Sample karate test script
 
   Background:
     * url 'https://jsonplaceholder.typicode.com'
+    * def user = Java.type('suites.users.model.User')
 
   Scenario: TC123401. Get all users and then get the first user by id
     Given path 'users'
@@ -16,23 +17,9 @@ Feature: Sample karate test script
     Then status 200
 
   Scenario: TC123402. Create a user and then get it by id
-    * def user =
-      """
-      {
-        "name": "Test User",
-        "username": "testuser",
-        "email": "test@user.com",
-        "address": {
-          "street": "Has No Name",
-          "suite": "Apt. 123",
-          "city": "Electri",
-          "zipcode": "54321-6789"
-        }
-      }
-      """
-
     Given url 'https://jsonplaceholder.typicode.com/users'
-    And request user
+    * def body = user.valid()
+    And request body
     When method post
     Then status 201
 
